@@ -19,7 +19,7 @@ describe("Buy a t-shirt", () => {
 
     cy.get("#center_column > div > p > strong").should(
         "have.text",
-         "Your order on My Store is complete."
-      );
+        "Your order on My Store is complete.",
+    );
   });
 });
