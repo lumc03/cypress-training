@@ -26,8 +26,6 @@ describe("Buy a t-shirt", () => {
     adressPage.proceedToCheckout();
     shippingPage.acceptTermsOfService();
     shippingPage.proceedToCheckout();
-    paymentPage.bankwirePayment();
-    paymentPage.confirmOrder();
-    paymentPage.verificationStep();
+    paymentPage.validateOrderComplete("Your order on My Store is complete.");
   });
 });

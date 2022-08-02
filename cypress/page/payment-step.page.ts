@@ -10,20 +10,14 @@ class PaymentPage {
         this.orderComplete = ".cheque-indent > strong";
     }
 
-    public bankwirePayment(): void {
-        cy.get(this.bankwireBtn).click()
-    }
-    public confirmOrder(): void {
-        cy.get(this.confirmBtn).click()
-    }
-
-    public verificationStep(): void {
+    public validateOrderComplete(message: string): void {
+        cy.get(this.bankwireBtn).click();
+        cy.get(this.confirmBtn).click();
         cy.get(this.orderComplete).should(
-            "have.text",
-            "Your order on My Store is complete.",
+            "have.text", message
         );
-
     }
+
 }
 
 export { PaymentPage }
