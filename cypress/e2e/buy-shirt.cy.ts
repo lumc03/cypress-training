@@ -22,9 +22,7 @@ describe("Buy a t-shirt", () => {
     productListPage.addToCart();
     productListPage.goToCheckout();
     shopingCartPage.proceedToCheckout();
-    loginPage.typeEmail();
-    loginPage.typePasswd();
-    loginPage.submitLogin();
+    loginPage.login("aperdomobo@gmail.com", "WorkshopProtractor");
     adressPage.proceedToCheckout();
     shippingPage.acceptTermsOfService();
     shippingPage.proceedToCheckout();
