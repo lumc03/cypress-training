@@ -7,23 +7,17 @@ class PaymentPage {
     constructor() {
         this.bankwireBtn = ".bankwire";
         this.confirmBtn = "#cart_navigation > button";
-        this.orderComplete = "#center_column > div > p > strong";
+        this.orderComplete = ".cheque-indent > strong";
     }
 
-    public bankwirePayment(): void {
-        cy.get(this.bankwireBtn).click()
-    }
-    public confirmOrder(): void {
-        cy.get(this.confirmBtn).click()
-    }
-
-    public verificationStep(): void {
+    public validateOrderComplete(message: string): void {
+        cy.get(this.bankwireBtn).click();
+        cy.get(this.confirmBtn).click();
         cy.get(this.orderComplete).should(
-            "have.text",
-            "Your order on My Store is complete.",
+            "have.text", message
         );
-
     }
+
 }
 
 export { PaymentPage }
